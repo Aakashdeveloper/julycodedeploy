@@ -1,0 +1,166 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "description":"This is the api for users"
+    },
+    "tags":[
+        {
+            "name":"PUBLIC ROUTE",
+            "description":"Public Route"
+        }
+    ],
+    "paths":{
+        "/health":{
+            "summary":"Testing User Check",
+            "get":{
+                "description":"User Api Health Check",
+                "tags":["PUBLIC ROUTE"],
+                "responses":{
+                    "200":{
+                        "description":"User Health Pass"
+                    }
+                }
+            }
+        },
+        "/users":{
+            "summary":"Testing Users Route",
+            "get":{
+                "description":"User Api Routes",
+                "tags":["PUBLIC ROUTE"],
+                "parameters":[
+                    {
+                        "in":"query",
+                        "name":"role",
+                        "schema":{
+                            "type":"string"
+                        },
+                        "description":"Choose role as admin or user"
+                    },
+                    {
+                        "in":"query",
+                        "name":"city",
+                        "schema":{
+                            "type":"string"
+                        },
+                        "description":"Enter User City"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"User Health Pass"
+                    }
+                }
+            }
+        },
+        "/user/{id}":{
+            "summary":"Testing Users Route",
+            "get":{
+                "description":"Testing User Route for the app",
+                "tags":["PUBLIC ROUTE"],
+                "parameters":[
+                    {
+                        "in":"path",
+                        "name":"id",
+                        "required":true,
+                        "schema":{
+                            "type":"string"
+                        },
+                        "description":"Choose role as admin or user"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"User Health Pass"
+                    }
+                }
+            }
+        },
+        "/addUser":{
+            "summary":"Testing Add Users Route",
+            "post":{
+                "description":"Testing User Route for the app",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":true,
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "name":"JuneTest",
+                                "city":"Delhi",
+                                "phone":398766173,
+                                "role":"User",
+                                "isActive":true
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"User Add Pass"
+                    }
+                }
+            }
+        },
+        "/updateUser":{
+            "summary":"Testing Update Users Route",
+            "put":{
+                "description":"Testing Update User Route for the app",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":true,
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "_id":"",
+                                "name":"JuneTest",
+                                "city":"Delhi",
+                                "phone":398766173,
+                                "role":"User",
+                                "isActive":true
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"User Update Pass"
+                    }
+                }
+            }
+        },
+        "/deleteUser":{
+            "summary":"Testing Delete Users Route",
+            "delete":{
+                "description":"Testing Delete User Route for the app",
+                "tags":["PUBLIC ROUTE"],
+                "requestBody":{
+                    "required":true,
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "id":"string"
+                            },
+                            "example":{
+                                "_id":""
+                            }
+                        }
+                    }
+                },
+                "responses":{
+                    "200":{
+                        "description":"User Delete Pass"
+                    }
+                }
+            }
+        }
+    }
+}
