@@ -12,7 +12,7 @@ async function main(){
 const collection = client.db('internfeb').collection('dashboard');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = process.env.PORT || 7710;
+const port = process.env.PORT || 7700;
 let swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 const package = require('./package.json');
