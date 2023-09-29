@@ -136,7 +136,7 @@
                 }
             }
         },
-        "/deleteUser":{
+        "/deleteUser1":{
             "summary":"Testing Delete Users Route",
             "delete":{
                 "description":"Testing Delete User Route for the app",
